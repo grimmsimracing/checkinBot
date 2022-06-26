@@ -126,17 +126,25 @@ client.on('message', (msg) => {
     }
     
     else if(command === 'listdrivers'){
-        axios.get('https://gsr.emotorsports.my/race/assets/functions/discordBot.php', {
+        globalEventID = channelID
+        if(channelID){
+        axios.get('http://gsr.emotorsports.my/race/assets/functions/discordBot.php', {
             params: {
               action: 'listDrivers',
               leagueID:channelID
             }
         }).then(function (response) {
-            msg.channel.send(response.data.driverlist,{split:true});
+            msg.channel.send(response.data.message,{split:true});
+            console.log("ok");
+            //setTimeout(function(){ 
+                //msg.channel.send("!delete");
+           //},5000); //time in milliseconds
         }).catch(function (error) {
             console.log(error);
-        }); 
+          }); 
+        }//end of if eventID
     }
+
     
   });
 
