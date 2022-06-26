@@ -124,6 +124,20 @@ client.on('message', (msg) => {
             msg.channel.send("!entrylist "+channelID);
         });
     }
+    
+    else if(command === 'listdrivers'){
+        axios.get('https://gsr.emotorsports.my/race/assets/functions/discordBot.php', {
+            params: {
+              action: 'listDrivers',
+              eventID:channelID
+            }
+        }).then(function (response) {
+            msg.channel.send(response.data.entrylist,{split:true});
+        }).catch(function (error) {
+            console.log(error);
+        }); 
+    }
+    
   });
 
 client.login(process.env.BOT_TOKEN);
