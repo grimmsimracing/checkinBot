@@ -129,7 +129,7 @@ client.on('message', (msg) => {
         axios.get('https://gsr.emotorsports.my/race/assets/functions/discordBot.php', {
             params: {
               action: 'listDrivers',
-              eventID:channelID
+              leagueID:channelID
             }
         }).then(function (response) {
             msg.channel.send(response.data.entrylist,{split:true});
