@@ -132,7 +132,7 @@ client.on('message', (msg) => {
               leagueID:channelID
             }
         }).then(function (response) {
-            msg.channel.send(response.data.entrylist,{split:true});
+            msg.channel.send(response.data.driverlist,{split:true});
         }).catch(function (error) {
             console.log(error);
         }); 
