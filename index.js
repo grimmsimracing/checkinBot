@@ -97,7 +97,7 @@ client.on('message', (msg) => {
         }//end of if eventID
     }
     
-    else if(command === 'pointsPro'){
+    else if(command === 'pointspro'){
         globalEventID = channelID
         if(channelID){
         axios.get('http://gsr.emotorsports.my/race/assets/functions/discordBot.php', {
@@ -119,7 +119,7 @@ client.on('message', (msg) => {
         }//end of if eventID
     }
     
-    else if(command === 'pointsProAm'){
+    else if(command === 'pointsproam'){
         globalEventID = channelID
         if(channelID){
         axios.get('http://gsr.emotorsports.my/race/assets/functions/discordBot.php', {
@@ -141,7 +141,7 @@ client.on('message', (msg) => {
         }//end of if eventID
     }
     
-    else if(command === 'pointsAm'){
+    else if(command === 'pointsam'){
         globalEventID = channelID
         if(channelID){
         axios.get('http://gsr.emotorsports.my/race/assets/functions/discordBot.php', {
