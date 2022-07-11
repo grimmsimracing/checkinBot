@@ -97,6 +97,72 @@ client.on('message', (msg) => {
         }//end of if eventID
     }
     
+    else if(command === 'pointsPro'){
+        globalEventID = channelID
+        if(channelID){
+        axios.get('http://gsr.emotorsports.my/race/assets/functions/discordBot.php', {
+            params: {
+              action: 'pointstableCategory',
+              discordID: driver_username,
+              eventID:channelID,
+              category:'2'
+            }
+        }).then(function (response) {
+            msg.channel.send(response.data.message,{split:true});
+            console.log("ok");
+            //setTimeout(function(){ 
+                //msg.channel.send("!delete");
+           //},5000); //time in milliseconds
+        }).catch(function (error) {
+            console.log(error);
+          }); 
+        }//end of if eventID
+    }
+    
+    else if(command === 'pointsProAm'){
+        globalEventID = channelID
+        if(channelID){
+        axios.get('http://gsr.emotorsports.my/race/assets/functions/discordBot.php', {
+            params: {
+              action: 'pointstableCategory',
+              discordID: driver_username,
+              eventID:channelID,
+              category:'1'
+            }
+        }).then(function (response) {
+            msg.channel.send(response.data.message,{split:true});
+            console.log("ok");
+            //setTimeout(function(){ 
+                //msg.channel.send("!delete");
+           //},5000); //time in milliseconds
+        }).catch(function (error) {
+            console.log(error);
+          }); 
+        }//end of if eventID
+    }
+    
+    else if(command === 'pointsAm'){
+        globalEventID = channelID
+        if(channelID){
+        axios.get('http://gsr.emotorsports.my/race/assets/functions/discordBot.php', {
+            params: {
+              action: 'pointstableCategory',
+              discordID: driver_username,
+              eventID:channelID,
+              category:'0'
+            }
+        }).then(function (response) {
+            msg.channel.send(response.data.message,{split:true});
+            console.log("ok");
+            //setTimeout(function(){ 
+                //msg.channel.send("!delete");
+           //},5000); //time in milliseconds
+        }).catch(function (error) {
+            console.log(error);
+          }); 
+        }//end of if eventID
+    }
+    
     else if(command === 'teamregistration'){
         globalEventID = channelID
         if(channelID){
