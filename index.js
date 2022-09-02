@@ -18,9 +18,22 @@ client.on('message', (msg) => {
     const commandBody = msg.content.slice(prefix.length);
     const args = commandBody.split(" ");
     const command = args.shift().toLowerCase();
-
+    
     if(command === 'entrylist'){
         axios.get('https://gsr.emotorsports.my/race/assets/functions/discordBot.php', {
+            params: {
+              action: 'entryList',
+              eventID:channelID
+            }
+        }).then(function (response) {
+            msg.channel.send(response.data.entrylist,{split:true});
+        }).catch(function (error) {
+            console.log(error);
+        }); 
+    }
+    
+    if(command === 'entrylistERGP'){
+        axios.get('https://ergp.axlemotorsport.com/race/assets/functions/discordBot.php', {
             params: {
               action: 'entryList',
               eventID:channelID
