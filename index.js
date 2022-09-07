@@ -48,7 +48,8 @@ client.on('message', (msg) => {
     }
     
     else if(command === 'testing'){
-       client.users.get("Fahad Gaffoor#1876").send("someMessage");
+       //client.users.get("Fahad Gaffoor#1876").send("someMessage");
+        msg.member.user.username+"#Fahad Gaffoor#1876";
     }
     
 
