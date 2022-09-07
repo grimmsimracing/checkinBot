@@ -4,6 +4,8 @@ const config = require('dotenv').config();
 const prefix = '!';
 const client = new Discord.Client();
 var globalEventID = '';
+var globalAuthorID = '';
+
 
 client.on('ready', () => {
     console.log('Logged in...');
@@ -32,7 +34,7 @@ client.on('message', (msg) => {
         }); 
     }
     
-    if(command === 'entrylistERGP'){
+    else if(command === 'entrylistERGP'){
         axios.get('https://ergp.axlemotorsport.com/race/assets/functions/discordBot.php', {
             params: {
               action: 'entryList',
@@ -44,6 +46,11 @@ client.on('message', (msg) => {
             console.log(error);
         }); 
     }
+    
+    else if(command === 'testing'){
+       client.users.get("Fahad Gaffoor#1876").send("someMessage");
+    }
+    
 
     else if(command === 'checkin'){
         globalEventID = channelID
