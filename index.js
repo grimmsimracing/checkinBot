@@ -35,7 +35,7 @@ client.on('message', (msg) => {
     }
     
     else if(command === 'entrylistERGP'){
-        axios.get('https://ergp.axlemotorsport.com/race/assets/functions/discordBot.php', {
+        axios.get('https://gsr.emotorsports.my/race/assets/functions/ERGPDiscordBot.php', {
             params: {
               action: 'entryList',
               eventID:channelID
