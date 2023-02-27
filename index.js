@@ -47,6 +47,19 @@ client.on('message', (msg) => {
         }); 
     }
     
+    else if(command === 'ge11bronze'){
+        axios.get('https://eracinggp.axlemotorsport.com/race/assets/functions/discordBot.php', {
+            params: {
+              action: 'entryListBronze',
+              eventID:channelID
+            }
+        }).then(function (response) {
+            msg.channel.send(response.data.entrylist,{split:true});
+        }).catch(function (error) {
+            console.log(error);
+        }); 
+    }
+    
     else if(command === 'testing'){
        //client.users.get("Fahad Gaffoor#1876").send("someMessage");
         //msg.member.user.username+"#Fahad Gaffoor#1876";
