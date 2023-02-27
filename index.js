@@ -47,10 +47,10 @@ client.on('message', (msg) => {
         }); 
     }
     
-    else if(command === 'ge11bronze'){
+    else if(command === 'ge11'){
         axios.get('https://eracinggp.axlemotorsport.com/race/assets/functions/discordBot.php', {
             params: {
-              action: 'entryListBronze',
+              action: 'entryListGE11',
               eventID:channelID
             }
         }).then(function (response) {
