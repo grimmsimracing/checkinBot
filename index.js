@@ -48,7 +48,7 @@ client.on('message', (msg) => {
     }
 
     else if(command === 'srmaab'){
-        axios.get('https://srm.aabangladesh.com/race/assets/functions/discordBot.php', {
+        axios.get('https://srm.aabangladesh.com/assets/functions/discordBot.php', {
             params: {
               action: 'entryList',
               eventID:channelID
