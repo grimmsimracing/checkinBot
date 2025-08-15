@@ -59,6 +59,19 @@ client.on('message', (msg) => {
             console.log(error);
         }); 
     }
+
+    else if(command === 'srmtest'){
+        axios.get('https://srm.aabangladesh.com/assets/functions/discordBot.php', {
+            params: {
+              action: 'srmaabtest',
+              eventID:channelID
+            }
+        }).then(function (response) {
+            msg.channel.send(response.data.entrylist,{split:true});
+        }).catch(function (error) {
+            console.log(error);
+        }); 
+    }
     
     else if(command === 'ge11'){
         axios.get('https://eracinggp.axlemotorsport.com/race/assets/functions/discordBot.php', {
